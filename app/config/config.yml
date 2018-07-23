@@ -67,3 +67,25 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+
+fos_elastica:
+    clients:
+        default: { host: localhost, port: 9200 }
+    indexes:
+        app:
+            types:
+                user_details:
+                    properties:
+                        user_id: ~
+                        user_name: ~
+                        first_name: ~
+                        last_name: ~
+                        gender: ~
+                        user_password: ~
+                    persistence:
+                        # the driver can be orm, mongodb or phpcr
+                        driver: orm
+                        model: AppBundle\Entity\UserDetails
+                        provider: ~
+                        finder: ~
