@@ -13,6 +13,17 @@ $composer update
 $composer require friendsofsymfony/elastica-bundle
 ```
 
+## Populate
+
+```
+php bin/console fos:elastica:populate --no-debug
+```
+
+## Resets the popularity counter of each field (If new mapping field have been added)
+```
+Kibana->Management->Index Patterns->Refresh field list
+```
+
 ## Query Language 
 ```
 http://localhost:9200/_search?q=bell96
@@ -68,3 +79,5 @@ GET /_search
   }
 }
 ```
+
+
